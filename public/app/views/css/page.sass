@@ -1,0 +1,159 @@
+@import ../../../../node_modules/bourbon/app/assets/stylesheets/bourbon
+
+=verticalLine
+	width: 0
+	height: 40%
+=horizLine
+	width: 80%
+	height: 0
+
+
+
+.clockSection
+	width: 100px
+	.clockWrap
+		position: relative
+		top: 0
+		width: 100%
+		padding-bottom: 200%
+		background-color: #a4a4a4
+		>*
+			position: absolute
+			top: 0
+			+horizLine
+			border: 1px solid red
+		.line1
+			left: 10%
+		.line2
+			left: 100%
+			top: 5%
+			+verticalLine
+
+		.line3
+			left: 100%
+			top: 55%
+			+verticalLine
+		.line4
+			top: 100%
+			left: 10%
+
+		.line5
+			+verticalLine
+
+			left: 0
+			top: 55%
+		.line6
+			+verticalLine
+			left: 0
+			top: 5%
+		.line7
+			top: 50%
+			left: 10%
+=leftDown-fadeOut
+	+animation(leftDown 250ms ease-in ,fadeOut 0s ease-in forwards)
+	+transform-origin(-12.5% 50%)
+
+=DownDown-fadeOut
+	+animation(leftDown 250ms ease-in ,fadeOut 0s ease-in forwards)
+	+transform-origin(50% 112.5%)
+=leafDown($duration)
+	+animation(leftDown $duration ease-in)
+=fadeOut
+	+animation(fadeOut 0s ease-in forwards)
+=fadeIn
+	+animation(fadeIn 0s ease-in forwards)
++keyframes(fadeOut)
+	0%
+		opacity: 1
+	100%
+		opacity: 0
++keyframes(leftDown)
+	0%
+		+transform(rotate(0))
+	100%
+		+transform(rotate(90deg))
++keyframes(fadeIn)
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+.keyFrame0_1
+	.line1
+		+leftDown-fadeOut
+		+animation-delay(0s,250ms)
+	.line6
+		+DownDown-fadeOut
+		+animation-delay(250ms,500ms)
+	.line7
+		+leftDown-fadeOut
+		+animation-delay(500ms,750ms)
+	.line5
+		+DownDown-fadeOut
+		+animation-delay(750ms,1s)
+	.line4
+		+fadeOut
+		+animation-delay(1s)
+
++keyframes(rightDown)
+	0%
+		+transform(rotate(0))
+	100%
+		+transform(rotate(-90deg))
++keyframes(leafDown)
+	0%
+		+transform(translateY(-100px))
+	100%
+		+transform(translateY(0))
+=rightDown-Hidden
+	+animation(rightDown 500ms ease-in,fadeOut 0s ease-in forwards)
+	+transform-origin(50% 112.5%)
+=rightDown
+	+animation(rightDown 500ms ease-in)
+	+transform-origin(50% 112.5%)
+=leafDown-fadeIn
+	+animation(leafDown 500ms ease-in,fadeIn 0s ease-in forwards)
+.keyFrame10_1
+	.line2
+		+rightDown
+		+animation-delay(1s)
+	.line7
+		+fadeIn
+		+animation-delay(1500ms)
+	.line3
+		+rightDown-Hidden
+		+animation-delay(1000s,1500ms)
+	.line4
+		+fadeIn
+		+animation-delay(1500ms)
+	.line1
+		+leafDown-fadeIn
+		+animation-delay(2s)
+	.line5
+		+fadeIn
+		+animation-delay(2s)
+
+
+.keyFrame0_9
+	.line1
+		+animation(
+				0s,
+				1s,
+				2s,
+				3s,
+				4s,
+				5s,
+				6s,
+				7s,
+				8s,
+				9s,
+			)
+	.line2
+	.line3
+	.line4
+	.line5
+	.line6
+	.line7
+
+=lin1_0s
+	
